@@ -1,0 +1,14 @@
+<mat-form-field class="w-100 mb-2" appearance="outline">
+  <mat-label>{{label}}</mat-label>
+  <input
+    matInput
+    [formControl]="control"
+    (blur)="updateErrorMessage()"
+  />
+  @if (hint) {
+    <mat-hint>{{hint}}</mat-hint>
+  }
+  @if (control.invalid) {
+    <mat-error>{{errorMessage()}}</mat-error>
+  }
+</mat-form-field>

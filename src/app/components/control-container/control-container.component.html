@@ -1,0 +1,27 @@
+<form class="row border border-warning" [formGroup]="form" (ngSubmit)="submit()">
+  <p class="col-12">control-container works!</p>
+  <app-card-1 class="col-6 mb-2" />
+  <div class="col-6 mb-2">
+    <mat-card appearance="outlined">
+      <mat-card-content>Simple card 2</mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-6 mb-2">
+    <mat-card appearance="outlined">
+      <mat-card-content>Simple card 3</mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-6 mb-2">
+    <mat-card appearance="outlined">
+      <mat-card-content>Simple card 4</mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-12">
+    <button mat-flat-button class="me-2">Submit</button>
+    <button mat-stroked-button type="button" (click)="isShowValue = !isShowValue">Show/Hide form value</button>
+  </div>
+</form>
+
+@if (isShowValue) {
+  <pre class="py-2">{{form.value | json}}</pre>
+}

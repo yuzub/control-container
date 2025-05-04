@@ -1,0 +1,14 @@
+<mat-form-field class="w-100 mb-2" appearance="outline">
+  <mat-label>{{label}}</mat-label>
+  <mat-select [formControl]="control">
+    @for (option of options; track option.value) {
+      <mat-option [value]="option.value">{{option.label}}</mat-option>
+    }
+  </mat-select>
+  @if (control.invalid) {
+    <mat-error>{{errorMessage()}}</mat-error>
+  }
+  @if (hint) {
+    <mat-hint>{{control.value?.sound}}</mat-hint>
+  }
+</mat-form-field>
