@@ -1,19 +1,22 @@
 import {Component} from '@angular/core';
-import {MatCard, MatCardContent} from '@angular/material/card';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {Card1Component} from './card-1/card-1.component';
 import {MatButton} from '@angular/material/button';
 import {JsonPipe} from '@angular/common';
+import {Card2Component} from './card-2/card-2.component';
+import {Card3Component} from './card-3/card-3.component';
+import {Card4Component} from './card-4/card-4.component';
 
 @Component({
   selector: 'app-control-container',
   imports: [
-    MatCard,
-    MatCardContent,
     Card1Component,
     ReactiveFormsModule,
     MatButton,
-    JsonPipe
+    JsonPipe,
+    Card2Component,
+    Card3Component,
+    Card4Component
   ],
   templateUrl: './control-container.component.html',
   styleUrl: './control-container.component.scss'

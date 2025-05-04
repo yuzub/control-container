@@ -1,0 +1,12 @@
+<mat-card appearance="outlined" class="flex-grow-1">
+  <mat-card-content>
+    <p>card-2 works!</p>
+    <app-base-checkbox-control [control]="checkboxControl1" [label]="'Card2 Checkbox Label 1'" class="d-block" />
+    <p class="m-0">Group 1</p>
+    <app-base-radio-group-control [control]="radioButtonControl1" [options]="radioButtonOptions" class="d-block mb-2" />
+    <app-base-checkbox-control [control]="checkboxControl2" [label]="'Card2 Checkbox Label 2'" class="d-block" />
+    <p class="m-0">Group 2</p>
+    <app-base-radio-group-control [control]="radioButtonControl2" [options]="radioButtonOptions" class="d-block mb-2" />
+    <app-base-input-control [control]="inputControl" [label]="'Card2 Input Label'" />
+  </mat-card-content>
+</mat-card>

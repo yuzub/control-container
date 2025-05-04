@@ -1,21 +1,9 @@
 <form class="row border border-warning" [formGroup]="form" (ngSubmit)="submit()">
   <p class="col-12">control-container works!</p>
-  <app-card-1 class="col-6 mb-2" />
-  <div class="col-6 mb-2">
-    <mat-card appearance="outlined">
-      <mat-card-content>Simple card 2</mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-2">
-    <mat-card appearance="outlined">
-      <mat-card-content>Simple card 3</mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-2">
-    <mat-card appearance="outlined">
-      <mat-card-content>Simple card 4</mat-card-content>
-    </mat-card>
-  </div>
+  <app-card-1 class="col-6 mb-2 d-flex flex-column" />
+  <app-card-2 class="col-6 mb-2 d-flex flex-column" />
+  <app-card-3 class="col-6 mb-2 d-flex flex-column" />
+  <app-card-4 class="col-6 mb-2 d-flex flex-column" />
   <div class="col-12">
     <button mat-flat-button class="me-2">Submit</button>
     <button mat-stroked-button type="button" (click)="isShowValue = !isShowValue">Show/Hide form value</button>
