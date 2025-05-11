@@ -38,6 +38,8 @@ export class Card2Component implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.parentFormGroup.removeControl('step3Card2');
+
     this.parentFormGroup.addControl('step3Card2', this.fb.group({
         checkbox1: this.checkboxControl1,
         radioButton1: this.radioButtonControl1,

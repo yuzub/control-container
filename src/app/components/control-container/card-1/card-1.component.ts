@@ -38,6 +38,8 @@ export class Card1Component implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.parentFormGroup.removeControl('step3Card1');
+
     this.parentFormGroup.addControl('step3Card1', this.fb.group({
         input: this.inputControl,
         select: this.selectControl,
