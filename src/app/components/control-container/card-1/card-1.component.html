@@ -1,8 +1,10 @@
-<mat-card appearance="outlined" class="flex-grow-1">
+<mat-card appearance="outlined" class="flex-grow-1" [formGroup]="parentFormGroup">
   <mat-card-content>
     <p>card-1 works!</p>
     <app-base-input-control [control]="inputControl" [label]="'Card1 Input Label'" />
     <app-base-select-control [control]="selectControl" [label]="'Card1 Select Label'" [options]="selectOptions" />
-    <app-base-textarea-control  [control]="textareaControl" [label]="'Card1 Textarea Label'" />
+    <app-base-textarea-control  [control]="textareaControl1" [label]="'Card1 Textarea 1 Label'" />
+    <app-base-checkbox-control [control]="checkboxControl" [label]="'Card2 Checkbox Label 2'" class="d-block" />
+    <app-base-textarea-control  [control]="textareaControl2" [label]="'Card1 Textarea 2 Label'" />
   </mat-card-content>
 </mat-card>

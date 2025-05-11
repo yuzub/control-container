@@ -1,0 +1,14 @@
+@if (form) {
+  <mat-card appearance="outlined" class="flex-grow-1" [formGroup]="form">
+    <mat-card-content>
+      <p>card-1 works!</p>
+      <app-base-input-control [control]="getControl('inputControl')" [label]="'Card1 Input Label'" />
+      <app-base-select-control [control]="getControl('selectControl')" [label]="'Card1 Select Label'" [options]="selectOptions" />
+      <app-base-textarea-control  [control]="getControl('textareaControl1')" [label]="'Card1 Textarea 1 Label'" />
+      <app-base-checkbox-control [control]="getControl('checkboxControl')" [label]="'Card1 Checkbox Label'" class="d-block mb-2" />
+      @if (getControl('checkboxControl').value) {
+        <app-base-textarea-control  [control]="getControl('textareaControl2')" [label]="'Card1 Textarea 2 Label'" />
+      }
+    </mat-card-content>
+  </mat-card>
+}

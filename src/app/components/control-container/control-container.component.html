@@ -1,15 +1,5 @@
-<form class="row border border-warning" [formGroup]="form" (ngSubmit)="submit()">
+<div class="row">
   <p class="col-12">control-container works!</p>
   <app-card-1 class="col-6 mb-2 d-flex flex-column" />
   <app-card-2 class="col-6 mb-2 d-flex flex-column" />
-  <app-card-3 class="col-6 mb-2 d-flex flex-column" />
-  <app-card-4 class="col-6 mb-2 d-flex flex-column" />
-  <div class="col-12">
-    <button mat-flat-button class="me-2">Submit</button>
-    <button mat-stroked-button type="button" (click)="isShowValue = !isShowValue">Show/Hide form value</button>
-  </div>
-</form>
-
-@if (isShowValue) {
-  <pre class="py-2">{{form.value | json}}</pre>
-}
+</div>

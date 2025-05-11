@@ -1,23 +1,115 @@
 <p>all-in-one works!</p>
-<div class="row">
-  <div class="col-6 mb-2">
-    <mat-card appearance="outlined">
-      <mat-card-content>Simple card 1</mat-card-content>
+<div class="row" [formGroup]="form">
+  <div class="col-6 mb-2 d-flex flex-column">
+    <mat-card appearance="outlined" [formGroupName]="'step1Card1'" class="d-flex flex-column">
+      <mat-card-content>
+        <p>Card 1</p>
+        <mat-form-field class="w-100 mb-2" appearance="outline">
+          <mat-label>
+            Card1 Input Label
+          </mat-label>
+          <input
+            matInput
+            [formControlName]="'inputControl'"
+          />
+          @if (form.get('step1Card1.inputControl')?.hasError('required')) {
+            <mat-error>
+              You must enter a value
+            </mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-2" appearance="outline">
+          <mat-label>
+            Card1 Select Label
+          </mat-label>
+          <mat-select [formControlName]="'selectControl'">
+            @for (option of selectOptions; track option.value) {
+              <mat-option [value]="option.value">{{option.label}}</mat-option>
+            }
+          </mat-select>
+          @if (form.get('step1Card1.selectControl')?.hasError('required')) {
+            <mat-error>
+              You must enter a value
+            </mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-2" appearance="outline">
+          <mat-label>
+            Card1 Textarea 1 Label
+          </mat-label>
+          <textarea
+            matInput
+            [formControlName]="'textareaControl1'"
+          ></textarea>
+          @if (form.get('step1Card1.textareaControl1')?.hasError('required')) {
+            <mat-error>
+              You must enter a value
+            </mat-error>
+          }
+        </mat-form-field>
+        <mat-checkbox [formControlName]="'checkboxControl'" class="d-block mb-2">
+          Card1 Checkbox Label
+        </mat-checkbox>
+        @if (form.get('step1Card1.checkboxControl')?.value) {
+          <mat-form-field class="w-100 mb-2" appearance="outline">
+            <mat-label>
+              Card1 Textarea 2 Label
+            </mat-label>
+            <textarea
+              matInput
+              [formControlName]="'textareaControl2'"
+            ></textarea>
+            @if (form.get('step1Card1.textareaControl2')?.hasError('required')) {
+              <mat-error>
+                You must enter a value
+              </mat-error>
+            }
+          </mat-form-field>
+        }
+      </mat-card-content>
     </mat-card>
   </div>
-  <div class="col-6 mb-2">
-    <mat-card appearance="outlined">
-      <mat-card-content>Simple card 2</mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-2">
-    <mat-card appearance="outlined">
-      <mat-card-content>Simple card 3</mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-2">
-    <mat-card appearance="outlined">
-      <mat-card-content>Simple card 4</mat-card-content>
+  <div class="col-6 mb-2 d-flex flex-column">
+    <mat-card appearance="outlined" [formGroupName]="'step1Card2'" class="flex-grow-1">
+      <mat-card-content>
+        <p>Card 2</p>
+        <mat-checkbox [formControlName]="'checkboxControl1'" class="d-block">
+          Card2 Checkbox Label 1
+        </mat-checkbox>
+        <p class="m-0">Group 1</p>
+        <mat-radio-group [formControlName]="'radioButtonControl1'">
+          @for (option of radioButtonOptions; track option.value) {
+            <mat-radio-button class="example-radio-button" [value]="option.value">
+              {{option.label}}
+            </mat-radio-button>
+          }
+        </mat-radio-group>
+        <mat-checkbox [formControlName]="'checkboxControl2'" class="d-block">
+          Card2 Checkbox Label 2
+        </mat-checkbox>
+        <p class="m-0">Group 2</p>
+        <mat-radio-group [formControlName]="'radioButtonControl2'">
+          @for (option of radioButtonOptions; track option.value) {
+            <mat-radio-button class="example-radio-button" [value]="option.value">
+              {{option.label}}
+            </mat-radio-button>
+          }
+        </mat-radio-group>
+        <mat-form-field class="w-100 my-2" appearance="outline">
+          <mat-label>
+            Card2 Input Label
+          </mat-label>
+          <input
+            matInput
+            [formControlName]="'inputControl'"
+          />
+          @if (form.get('step1Card1.inputControl')?.hasError('required')) {
+            <mat-error>
+              You must enter a value
+            </mat-error>
+          }
+        </mat-form-field>
+      </mat-card-content>
     </mat-card>
   </div>
 </div>

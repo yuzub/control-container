@@ -2,13 +2,29 @@
   <div class="container-fluid">
     <ul class="list-unstyled m-0 d-flex">
       <li class="me-1"><a class="" mat-button routerLink="/all-in-one" routerLinkActive="active">All in one</a></li>
-      <li class="me-1"><a class="" mat-button routerLink="/separate-controls" routerLinkActive="active">Separate controls</a></li>
       <li class="me-1"><a class="" mat-button routerLink="/form-wrapper" routerLinkActive="active">From parent to children</a></li>
-      <li class=""><a class="" mat-button routerLink="/control-container" routerLinkActive="active">ControlContainer usage</a></li>
+      <li class="me-1"><a class="" mat-button routerLink="/control-container" routerLinkActive="active">ControlContainer usage</a></li>
+      <li class="me-1"><a class="" mat-button routerLink="/summary" routerLinkActive="active">Summary</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container-fluid">
-  <router-outlet />
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <router-outlet />
+
+    @if (!isSummaryRoute) {
+      <div class="row">
+        <div class="col-12 mt-3">
+          <button class="me-2" mat-flat-button>Submit</button>
+          <button class="me-2" mat-stroked-button type="button" (click)="isShowValue = !isShowValue">Show/Hide form value</button>
+          <button mat-stroked-button type="button" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    }
+  </form>
 </div>
+
+@if (isShowValue && !isSummaryRoute) {
+  <pre class="py-2">{{form.value | json}}</pre>
+}

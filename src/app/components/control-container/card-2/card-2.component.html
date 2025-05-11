@@ -1,4 +1,4 @@
-<mat-card appearance="outlined" class="flex-grow-1">
+<mat-card appearance="outlined" class="flex-grow-1" [formGroup]="parentFormGroup">
   <mat-card-content>
     <p>card-2 works!</p>
     <app-base-checkbox-control [control]="checkboxControl1" [label]="'Card2 Checkbox Label 1'" class="d-block" />
